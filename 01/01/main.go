@@ -39,10 +39,9 @@ func main() {
 				found = true
 				break
 			}
-
-			if found {
-				break
-			}
+		}
+		if found {
+			break
 		}
 	}
 

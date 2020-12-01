@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	file, err := os.Open("01/01/input")
+	file, err := os.Open("01/02/input")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -40,11 +40,13 @@ func main() {
 					found = true
 					break
 				}
-
-				if found {
-					break
-				}
 			}
+			if found {
+				break
+			}
+		}
+		if found {
+			break
 		}
 	}
 }
