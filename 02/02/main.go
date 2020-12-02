@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	file, err := os.Open("02/01/input")
+	file, err := os.Open("02/02/input")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -39,14 +39,11 @@ func main() {
 		lowerLimit, _ := strconv.Atoi(limits[0])
 		upperLimit, _ := strconv.Atoi(limits[1])
 
-		amountFound := 0
-		for _, c := range parts[1] {
-			if string(c) == stringToFind {
-				amountFound++
-			}
-		}
+		password := parts[1]
 
-		if amountFound >= lowerLimit && amountFound <= upperLimit {
+		char1 := string(password[lowerLimit-1])
+		char2 := string(password[upperLimit-1])
+		if (char1 == stringToFind || char2 == stringToFind) && !(char1 == stringToFind && char2 == stringToFind) {
 			validPasswordsFound++
 		}
 	}
